@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+
+		body{
+			margin: 0px;
+			padding: 0px;
+		}
+
+		.bx {
+			background-image: url(1.avif); 
+			height: 970px; 
+			background-repeat: no-repeat; 
+			background-size: 100% 100%;
+			
+		}
+		.btn {
+			margin-left: 900px;
+			height: 50px; 
+			border-radius: 20px; 
+			background: #000000; 
+			background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 48, 110, 1) 0%, rgba(45, 111, 253, 1) 100%);
+		}
+		.btn2 {
+			margin-left: 900px;
+			height: 60px; 
+			border-radius: 20px; 
+			background: #000000; 
+			background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 48, 110, 1) 0%, rgba(45, 111, 253, 1) 100%);
+			display: none;
+		}
+		.box {
+			height: 200px; 
+			width: 250px;
+			background-size: 100% 100%;
+		}
+		.b1 {
+			background-image: url(6.webp);
+			transition: 0.7s;
+			position: absolute;
+			left: 500px;
+			top: 200px;
+			cursor: pointer;
+		}
+		.b2 {
+			background-image: url(1.webp);
+			margin-left: 100px;
+			transition: 0.7s;
+			position: absolute;
+			left: 700px;
+			top: 200px;
+			cursor: pointer;
+		}
+		.b3 {
+			background-image: url(2.webp);
+			margin-left: 100px;
+			transition: 0.7s;
+			position: absolute;
+			left: 1000px;
+			top: 200px;
+			cursor: pointer;
+		}
+		.b4 {
+			background-image: url(3.webp);
+			transition: 0.7s;
+			position: absolute;
+			left: 500px;
+			top: 500px;
+			cursor: pointer;
+		}
+		.b5 {
+			background-image: url(4.webp);
+			transition: 0.7s;
+			position: absolute;
+			left: 800px;
+			top: 500px;
+			cursor: pointer;
+		}
+		.b6 {
+			background-image: url(5.webp);
+			transition: 0.7s;
+			position: absolute;
+			left: 1100px;
+			top: 500px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<div class="bx">
+	<div class="main2">
+		<h1 style="margin-top: 0px; color: white; text-align: center;">У тебя <span class="txt">3</span> попытки</h1>
+		<button class="btn">Перемешать</button>
+		<div class="main">
+			<div style="margin-left: 470px; display: flex; margin-top: 70px;">
+				<div class="box b1"></div>
+				<div class="box b2"></div>
+				<div class="box b3"></div>
+			</div>
+			<div style="margin-left: 470px; display: flex; margin-top: 70px">
+				<div class ="box b4"></div>
+				<div class ="box b5"></div>
+				<div class ="box b6"></div>
+			</div>
+			<div>
+				<button class="btn2">Играть заново</button>
+			</div>
+
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+			let attempts = 3
+		document.querySelector(".btn").onclick = function() { 
+
+			document.querySelector (".b1").style.left = "800px"
+			document.querySelector (".b1").style.top = "500px"
+			document.querySelector(".b1").style.background = "black"
+
+			document.querySelector (".b2").style.left = "1000px"
+			document.querySelector(".b2").style.background = "black"
+
+			document.querySelector (".b3").style.left = "400px"
+			document.querySelector (".b3").style.top = "500px"
+			document.querySelector(".b3").style.background = "black"
+
+			document.querySelector (".b4").style.left = "800px"
+			document.querySelector (".b4").style.top = "200px"
+			document.querySelector(".b4").style.background = "black"
+
+			document.querySelector (".b5").style.left = "1100px"
+			document.querySelector (".b5").style.background = "black"
+
+			document.querySelector (".b6").style.left = "500px"
+			document.querySelector (".b6").style.top = "200px"
+			document.querySelector (".b6").style.background = "black"
+		}	
+		document.querySelector (".b2").onclick = function () {
+			attempts = attempts - 1
+			document.querySelector (".txt").innerHTML = attempts
+			document.querySelector (".b2").style.backgroundImage = "url(1.webp)"
+			document.querySelector (".b2").style.backgroundSize = "100% 100%"
+			if (attempts == 0) {
+				alert ("Ты проиграл!")
+				document.querySelector (".main2").style.display = "none"
+				document.querySelector (".btn2").style.display = "block"
+			}
+		}
+
+		document.querySelector (".b3").onclick = function () {
+			attempts = attempts - 1
+			document.querySelector (".txt").innerHTML = attempts
+			document.querySelector (".b3").style.backgroundImage = "url(2.webp)"
+			document.querySelector (".b3").style.backgroundSize = "100% 100%"
+			if (attempts == 0) {
+				alert ("Ты проиграл!")
+				document.querySelector (".main2").style.display = "none"
+				document.querySelector (".btn2").style.display = "block"
+			}
+		}
+		document.querySelector (".b1").onclick = function () {
+				alert ("Ты выиграл!")
+				//document.querySelector (".main2").style.display = "none"
+				document.querySelector (".btn2").style.display = "block"
+				document.querySelector (".b1").style.backgroundImage = "url(6.webp)"
+				document.querySelector (".b1").style.backgroundSize = "100% 100%"		
+		}
+		document.querySelector (".b4").onclick = function () {
+			attempts = attempts - 1
+			document.querySelector (".txt").innerHTML = attempts
+			document.querySelector (".b4").style.backgroundImage = "url(3.webp)"
+			document.querySelector (".b4").style.backgroundSize = "100% 100%"
+			if (attempts == 0) {
+				alert ("Ты проиграл!")
+				document.querySelector (".main2").style.display = "none"
+				document.querySelector (".btn2").style.display = "block"
+			}
+		}
+
+		document.querySelector (".b5").onclick = function () {
+			attempts = attempts - 1
+			document.querySelector (".txt").innerHTML = attempts
+			document.querySelector (".b5").style.backgroundImage = "url(4.webp)"
+			document.querySelector (".b5").style.backgroundSize = "100% 100%"
+			if (attempts == 0) {
+				alert ("Ты проиграл!")
+				document.querySelector (".main2").style.display = "none"
+				document.querySelector (".btn2").style.display = "block"
+			}
+		}
+		document.querySelector (".b6").onclick = function () {
+			attempts = attempts - 1
+			document.querySelector (".txt").innerHTML = attempts
+			document.querySelector (".b6").style.backgroundImage = "url(5.webp)"
+			document.querySelector (".b6").style.backgroundSize = "100% 100%"
+			if (attempts == 0) {
+				alert ("Ты проиграл!")
+				document.querySelector (".main2").style.display = "none"
+				document.querySelector (".btn2").style.display = "block"
+			}
+		}
+</script>
+</body>
+</html>
